@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background-color: black;
+  border-bottom: 1px solid black;
+  align-items: center;
+  .logo{
+    a{
+      img {
+        width: 65px;
+      }
+    }
+  }
+
+  .navigation{
+    ul{
+      display: block;
+      padding: 0;
+      margin:0;
+      list-style: none;
+      li{
+        display: inline;
+        a{
+          color: white;
+          text-decoration: none;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+}
