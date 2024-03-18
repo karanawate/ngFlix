@@ -25,6 +25,9 @@
       </div>
     </div>
   </div>
+  <div *ngFor="let item of items">
+    {{ item }}
+  </div>
   <pre>
     {{ movies$ |async| json }}
   </pre>
