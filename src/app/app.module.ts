@@ -9,7 +9,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MoviesService } from './services/movies.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,7 @@ import { MoviesService } from './services/movies.service';
     SliderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [MoviesService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
