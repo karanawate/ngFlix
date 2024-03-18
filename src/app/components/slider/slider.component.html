@@ -28,6 +28,7 @@
   <div *ngFor="let item of items">
     {{ item }}
   </div>
+  <div *ngIf="items.length > 4">this is array of five and move </div>
   <pre>
     {{ movies$ |async| json }}
   </pre>
