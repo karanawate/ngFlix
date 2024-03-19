@@ -25,12 +25,11 @@
       </div>
     </div>
   </div>
-  <div *ngFor="let item of items">
-    {{ item }}
+
+<div *ngIf="movies$ | async as movies">
+  <div class="movie" *ngFor="let movie of movies.results">
+      {{ movie.original_title}}
   </div>
-  <div *ngIf="items.length > 4">this is array of five and move </div>
-  <pre>
-    {{ movies$ |async| json }}
-  </pre>
+</div>
 
 <!-- stirng interpolutin systax {{ }} -->

@@ -8,7 +8,7 @@ export class MoviesService {
   constructor(private http: HttpClient) {}
 
   getPopularMovies() {
-    return this.http.get(
+    return this.http.get<any>(
       'https://api.themoviedb.org/3/movie/popular?api_key=415483c86436e6dfc6155f24a0d752fa'
     );
   }
