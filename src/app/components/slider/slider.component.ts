@@ -28,6 +28,10 @@ export class SliderComponent implements OnInit {
   slideIndex = 0;
 
   ngOnInit() {
+    this.changeSlide();
+  }
+
+  changeSlide() {
     setInterval(() => {
       this.slideIndex += 1;
     }, 5000);
