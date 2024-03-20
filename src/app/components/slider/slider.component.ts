@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MoviesService } from '../../services/movies.service';
+import { imageBaseUrl } from '../../constants/images-size';
 import {
   animate,
   state,
@@ -27,6 +28,8 @@ export class SliderComponent implements OnInit {
 
   slideIndex = 0;
 
+  imageBaseUrl = imageBaseUrl;
+
   ngOnInit() {
     this.changeSlide();
   }
@@ -34,6 +37,9 @@ export class SliderComponent implements OnInit {
   changeSlide() {
     setInterval(() => {
       this.slideIndex += 1;
+      if (this.slideIndex > 10) {
+        this.slideIndex = 0;
+      }
     }, 5000);
   }
 }

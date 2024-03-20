@@ -3,7 +3,7 @@
   <div class="slide"
   *ngIf="movieIndex === slideIndex" @slideFade>
     <div class="slide-bg">
-      <img src="{{ 'https://image.tmdb.org/t/p/w1280'+movie.backdrop_path}}" alt="dfdf" height="300" width="1200">
+      <img src="{{ imageBaseUrl + 'w1280' + movie.backdrop_path}}" alt="dfdf" height="300" width="1200">
     </div>
     <div class="slide-pane">
       <h2 class="title">{{movie.title}}</h2>
@@ -19,7 +19,7 @@
         </div>
         <div class="release-date ">
           <i class="pi pi-calendar"></i>
-          <span>{{movie.release_date}}</span>
+          <span>{{movie.release_date | date:'yyyy'}}</span>
         </div>
       </div>
       <div class="description">
@@ -29,6 +29,8 @@
   </div>
 </ng-container>
 </div>
+
+
 
 
 
