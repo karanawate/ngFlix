@@ -3,7 +3,7 @@
   <div class="slide"
   *ngIf="movieIndex === slideIndex" @slideFade>
     <div class="slide-bg">
-      <img src="{{ imageBaseUrl + 'w1280' + movie.backdrop_path}}" alt="dfdf" height="300" width="1200">
+      <img [src]="imageBaseUrl + 'w1280' + movie.backdrop_path" alt="dfdf" height="300" width="1200" [alt]="movie.title">
     </div>
     <div class="slide-pane">
       <h2 class="title">{{movie.title}}</h2>

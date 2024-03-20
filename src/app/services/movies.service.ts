@@ -6,11 +6,14 @@ import { MovieDto } from '../types/movie';
   providedIn: 'root',
 })
 export class MoviesService {
+  private apiUrl = 'https://api.themoviedb.org/3/';
+  private apikey = '415483c86436e6dfc6155f24a0d752fa';
   constructor(private http: HttpClient) {}
 
   getPopularMovies() {
     return this.http.get<MovieDto>(
-      'https://api.themoviedb.org/3/movie/popular?api_key=415483c86436e6dfc6155f24a0d752fa'
+      `${this.apiUrl}/movie/popular?api_key=${this.apikey}`
+      // 'https://api.themoviedb.org/3/movie/popular?api_key=415483c86436e6dfc6155f24a0d752fa'
     );
   }
 }
