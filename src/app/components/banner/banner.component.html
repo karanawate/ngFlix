@@ -1,7 +1,8 @@
-<div class="banner container" *ngIf="getUpcomingMovies$ | async as getUpcomingMovies">
+<div class="banner container" *ngIf="shows">
+  <h1>Upcoming movies</h1>
   <div class="grid">
-    <div class="col-2" *ngFor="let movie of getUpcomingMovies.results">
-      <app-show-item [showItem]="movie"></app-show-item>
+    <div class="col-2" *ngFor="let show of shows">
+      <app-show-item [showItem]="show"></app-show-item>
     </div>
   </div>
 </div>
