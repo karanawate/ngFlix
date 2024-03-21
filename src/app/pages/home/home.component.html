@@ -4,6 +4,11 @@
 [title]="'Upcoming Movies'"
 [shows]="upcomingMovies.results"></app-banner>
 </ng-container>
+<ng-container *ngIf="topRatedMovies$| async as topRatedMovies">
+  <app-banner
+  [title]="'TopRated Movies'"
+  [shows]="topRatedMovies.results"></app-banner>
+  </ng-container>
 <app-banner></app-banner>
 <div>Popular Movies</div>
 <div>Popular Tv shows</div>

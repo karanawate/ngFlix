@@ -8,5 +8,6 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class HomeComponent {
   getUpcomingMovies$ = this.movieservice.getUpcomingMovies();
+  topRatedMovies$ = this.movieservice.getTopRatedMovies();
   constructor(private movieservice: MoviesService) {}
 }
