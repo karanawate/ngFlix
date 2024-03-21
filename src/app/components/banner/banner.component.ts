@@ -7,6 +7,6 @@ import { MoviesService } from '../../services/movies.service';
   styleUrl: './banner.component.scss',
 })
 export class BannerComponent {
-  upcomingMovies = this.movieservice.UpcomingMovies();
+  getUpcomingMovies$ = this.movieservice.getUpcomingMovies();
   constructor(private movieservice: MoviesService) {}
 }

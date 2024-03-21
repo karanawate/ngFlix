@@ -17,8 +17,8 @@ export class MoviesService {
     );
   }
 
-  UpcomingMovies() {
-    return this.http.get(
+  getUpcomingMovies() {
+    return this.http.get<MovieDto>(
       `${this.apiUrl}/movie/upcoming?api_key=${this.apikey}`
       // https://api.themoviedb.org/3/movie/upcoming?api_key=415483c86436e6dfc6155f24a0d752fa
     );
