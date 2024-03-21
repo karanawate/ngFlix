@@ -16,4 +16,11 @@ export class MoviesService {
       // 'https://api.themoviedb.org/3/movie/popular?api_key=415483c86436e6dfc6155f24a0d752fa'
     );
   }
+
+  UpcomingMovies() {
+    return this.http.get(
+      `${this.apiUrl}/movie/upcoming?api_key=${this.apikey}`
+      // https://api.themoviedb.org/3/movie/upcoming?api_key=415483c86436e6dfc6155f24a0d752fa
+    );
+  }
 }
