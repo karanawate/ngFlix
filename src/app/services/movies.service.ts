@@ -37,4 +37,10 @@ export class MoviesService {
       )
       .pipe(map((data) => data.results.slice(0, 12)));
   }
+
+  getPopularTvShows() {
+    return this.http
+      .get<MovieDto>(`${this.apiUrl}/tv/popular?api_key=${this.apikey}`)
+      .pipe(map((data) => data.results.slice(0, 12)));
+  }
 }

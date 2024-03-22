@@ -11,6 +11,7 @@ export type Movie = {
   vote_average: number;
   vote_count: number;
   overview: string;
+  name?: string;
 };
 
 export type MovieDto = {
