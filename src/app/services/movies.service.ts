@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MovieDto } from '../types/movie';
 import { map } from 'rxjs';
+import { TvshowsDto } from '../types/tvshows';
+import { MoviesDto } from '../types/movie';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class MoviesService {
 
   getPopularMovies() {
     return this.http
-      .get<MovieDto>(
+      .get<MoviesDto>(
         `${this.apiUrl}/movie/popular?api_key=${this.apikey}`
         // 'https://api.themoviedb.org/3/movie/popular?api_key=415483c86436e6dfc6155f24a0d752fa'
       )
@@ -22,7 +23,7 @@ export class MoviesService {
 
   getUpcomingMovies() {
     return this.http
-      .get<MovieDto>(
+      .get<MoviesDto>(
         `${this.apiUrl}/movie/upcoming?api_key=${this.apikey}`
         // https://api.themoviedb.org/3/movie/upcoming?api_key=415483c86436e6dfc6155f24a0d752fa
       )
@@ -31,7 +32,7 @@ export class MoviesService {
 
   getTopRatedMovies() {
     return this.http
-      .get<MovieDto>(
+      .get<MoviesDto>(
         `${this.apiUrl}/movie/top_rated?api_key=${this.apikey}`
         //https://api.themoviedb.org/3/tv/top_rated?api_key=415483c86436e6dfc6155f24a0d752fa
       )
@@ -40,7 +41,7 @@ export class MoviesService {
 
   getPopularTvShows() {
     return this.http
-      .get<MovieDto>(`${this.apiUrl}/tv/popular?api_key=${this.apikey}`)
+      .get<TvshowsDto>(`${this.apiUrl}/tv/popular?api_key=${this.apikey}`)
       .pipe(map((data) => data.results.slice(0, 12)));
   }
 }

@@ -4,17 +4,16 @@ export type Movie = {
   genre_ids: number[];
   original_language: string;
   original_title: string;
+  overview: string;
   popularity: number;
   poster_path: string;
   release_date: string;
   title: string;
   vote_average: number;
   vote_count: number;
-  overview: string;
-  name?: string;
 };
 
-export type MovieDto = {
+export type MoviesDto = {
   page: number;
   results: Movie[];
   total_pages: number;
