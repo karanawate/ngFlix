@@ -26,7 +26,7 @@ export class MoviesService {
         `${this.apiUrl}/movie/upcoming?api_key=${this.apikey}`
         // https://api.themoviedb.org/3/movie/upcoming?api_key=415483c86436e6dfc6155f24a0d752fa
       )
-      .pipe(map((data) => data.results));
+      .pipe(map((data) => data.results.slice(0, 12)));
   }
 
   getTopRatedMovies() {
@@ -35,6 +35,6 @@ export class MoviesService {
         `${this.apiUrl}/movie/top_rated?api_key=${this.apikey}`
         //https://api.themoviedb.org/3/tv/top_rated?api_key=415483c86436e6dfc6155f24a0d752fa
       )
-      .pipe(map((data) => data.results));
+      .pipe(map((data) => data.results.slice(0, 12)));
   }
 }
