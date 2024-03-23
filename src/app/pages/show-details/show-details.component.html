@@ -1,4 +1,6 @@
-<p>show-details works!{{showId}}</p>
+<ng-container *ngIf="show$ | async as show">
+  <app-slider [slides]="[show]"></app-slider>
+</ng-container>
 <pre>
 {{show$ | async | json}}
 </pre>

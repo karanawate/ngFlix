@@ -9,6 +9,7 @@ import { map } from 'rxjs';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  popularMovies$ = this.movieservice.getPopularMovies();
   getUpcomingMovies$ = this.movieservice.getUpcomingMovies();
   topRatedMovies$ = this.movieservice.getTopRatedMovies();
 
