@@ -12,7 +12,7 @@ import { Movie } from '../../types/movie';
 export class ShowDetailsComponent implements OnInit {
   showId = '';
 
-  // show$: Observable<Movie> | null = null;
+  show$: Observable<Movie> | null = null;
 
   constructor(
     private router: ActivatedRoute,
