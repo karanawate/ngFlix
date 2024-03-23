@@ -11,6 +11,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BannerComponent } from './components/banner/banner.component';
 import { ShowItemComponent } from './components/show-item/show-item.component';
+import { ShowDetailsComponent } from './pages/show-details/show-details.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ShowItemComponent } from './components/show-item/show-item.component';
     SliderComponent,
     BannerComponent,
     ShowItemComponent,
+    ShowDetailsComponent,
   ],
   imports: [
     BrowserModule,
