@@ -25,6 +25,7 @@ export class SliderComponent implements OnInit {
   constructor() {}
 
   @Input() slides: Movie[] = [];
+  @Input() isHeader = false;
   // movies$ = this.moviesService.getPopularMovies();
 
   slideIndex = 0;
@@ -32,7 +33,9 @@ export class SliderComponent implements OnInit {
   imageBaseUrl = imageBaseUrl;
 
   ngOnInit() {
-    this.changeSlide();
+    if (!this.isHeader) {
+      this.changeSlide();
+    }
   }
 
   changeSlide() {
