@@ -45,6 +45,7 @@
     <ng-container  *ngIf="showVideo$ | async as showVideos">
       <div class="grid">
         <div class="div col-4" *ngFor="let showVideo of showVideos">
+         <app-video-embed></app-video-embed>
           {{showVideo | json }}
         </div>
       </div>
