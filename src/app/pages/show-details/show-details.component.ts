@@ -4,6 +4,7 @@ import { MoviesService } from '../../services/movies.service';
 import { Observable } from 'rxjs';
 import { Movie } from '../../types/movie';
 import { IMAGE_SIZES } from '../../constants/images-size';
+import { Video } from '../../types/video';
 
 @Component({
   selector: 'app-show-details',
@@ -15,6 +16,7 @@ export class ShowDetailsComponent implements OnInit {
   imageSizes = IMAGE_SIZES;
 
   show$: Observable<Movie> | null = null;
+  showVideo$: Observable<Video[]> | null = null;
 
   constructor(
     private router: ActivatedRoute,
@@ -24,5 +26,6 @@ export class ShowDetailsComponent implements OnInit {
   ngOnInit() {
     this.showId = this.router.snapshot.params['id'];
     this.show$ = this.moviesService.getMovieById(this.showId);
+    this.showVideo$ = this.moviesService.getMovieVideo(this.showId);
   }
 }
