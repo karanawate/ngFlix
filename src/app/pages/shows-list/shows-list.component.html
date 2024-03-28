@@ -1,0 +1,11 @@
+<div class="container">
+  <ng-container *ngIf="showsLists$ | async as showLists">
+    <div class="grid">
+      <div class="col-2"  *ngFor="let show of showLists">
+        <app-show-item [showItem]="show" />
+        {{showLists | json}}
+      </div>
+    </div>
+  </ng-container>
+</div>
+ssss

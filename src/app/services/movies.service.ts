@@ -69,10 +69,16 @@ export class MoviesService {
   getMovieCredit(id: string) {
     return this.http
       .get<CreditDTO>(
-        `
-    ${this.apiUrl}/movie/${id}/credits?api_key=${this.apikey}
-    `
+        `${this.apiUrl}/movie/${id}/credits?api_key=${this.apikey}`
       )
       .pipe(map((data) => data.cast));
+  }
+
+  searchMovies(page: number, searchValue?: string) {
+    return this.http
+      .get<MoviesDto>(
+        `${this.apiUrl}/search/movie?query=${searchValue}&page=${page}&api_key=${this.apikey}`
+      )
+      .pipe(map((data) => data.results));
   }
 }

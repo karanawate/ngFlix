@@ -1,0 +1,19 @@
+import { Component, OnInit } from '@angular/core';
+import { MoviesService } from '../../services/movies.service';
+import { Observable } from 'rxjs';
+import { Movie } from '../../types/movie';
+
+@Component({
+  selector: 'app-shows-list',
+  templateUrl: './shows-list.component.html',
+  styleUrl: './shows-list.component.scss',
+})
+export class ShowsListComponent implements OnInit {
+  showsLists$: Observable<Movie[]> | null = null;
+
+  constructor(private movieservice: MoviesService) {}
+
+  ngOnInit(): void {
+    this.showsLists$ = this.movieservice.searchMovies(1);
+  }
+}
