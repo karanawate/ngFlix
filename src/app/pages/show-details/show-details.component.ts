@@ -6,6 +6,7 @@ import { Movie } from '../../types/movie';
 import { IMAGE_SIZES } from '../../constants/images-size';
 import { Video } from '../../types/video';
 import { Image } from '../../types/image';
+import { Actor } from '../../types/credit';
 
 @Component({
   selector: 'app-show-details',
@@ -19,6 +20,7 @@ export class ShowDetailsComponent implements OnInit {
   show$: Observable<Movie> | null = null;
   showVideo$: Observable<Video[]> | null = null;
   showImage$: Observable<Image[]> | null = null;
+  actor$: Observable<Actor[]> | null = null;
 
   constructor(
     private router: ActivatedRoute,
@@ -30,5 +32,6 @@ export class ShowDetailsComponent implements OnInit {
     this.show$ = this.moviesService.getMovieById(this.showId);
     this.showVideo$ = this.moviesService.getMovieVideo(this.showId);
     this.showImage$ = this.moviesService.getMovieImage(this.showId);
+    this.actor$ = this.moviesService.getMovieCredit(this.showId);
   }
 }

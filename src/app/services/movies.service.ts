@@ -5,6 +5,7 @@ import { TvshowsDto } from '../types/tvshows';
 import { Movie, MoviesDto } from '../types/movie';
 import { VideoDto } from '../types/video';
 import { ImageDto } from '../types/image';
+import { CreditDTO } from '../types/credit';
 
 @Injectable({
   providedIn: 'root',
@@ -63,5 +64,15 @@ export class MoviesService {
     return this.http
       .get<ImageDto>(`${this.apiUrl}/movie/${id}/images?api_key=${this.apikey}`)
       .pipe(map((data) => data.backdrops));
+  }
+
+  getMovieCredit(id: string) {
+    return this.http
+      .get<CreditDTO>(
+        `
+    ${this.apiUrl}/movie/${id}/credits?api_key=${this.apikey}
+    `
+      )
+      .pipe(map((data) => data.cast));
   }
 }
