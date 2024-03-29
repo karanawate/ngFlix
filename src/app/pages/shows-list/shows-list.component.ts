@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { Observable } from 'rxjs';
 import { Movie } from '../../types/movie';
+import { PaginatorState } from 'primeng/paginator';
 
 @Component({
   selector: 'app-shows-list',
@@ -25,7 +26,11 @@ export class ShowsListComponent implements OnInit {
   searchChanged() {
     this.getPagedShows(1, this.searchValue);
   }
-  pageChanged(event: any) {
-    console.log(event);
+  pageChanged(event: PaginatorState) {
+    const pageNumber = event.page ? event.page + 1 : 1;
+    console.log(pageNumber);
+    if (event.page) {
+      this.getPagedShows(pageNumber);
+    }
   }
 }
