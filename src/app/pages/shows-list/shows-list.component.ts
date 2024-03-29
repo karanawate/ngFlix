@@ -19,7 +19,7 @@ export class ShowsListComponent implements OnInit {
   }
 
   getPagedShows(page: number, searchkeyWord?: string) {
-    this.showsLists$ = this.movieservice.searchMovies(1, searchkeyWord);
+    this.showsLists$ = this.movieservice.searchMovies(page, searchkeyWord);
   }
 
   searchChanged() {
