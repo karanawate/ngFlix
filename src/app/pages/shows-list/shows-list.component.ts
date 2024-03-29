@@ -10,6 +10,7 @@ import { Movie } from '../../types/movie';
 })
 export class ShowsListComponent implements OnInit {
   showsLists$: Observable<Movie[]> | null = null;
+  searchValue = '';
 
   constructor(private movieservice: MoviesService) {}
 
