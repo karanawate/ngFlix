@@ -25,4 +25,7 @@ export class ShowsListComponent implements OnInit {
   searchChanged() {
     this.getPagedShows(1, this.searchValue);
   }
+  pageChanged(event: any) {
+    console.log(event);
+  }
 }

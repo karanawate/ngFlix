@@ -18,6 +18,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { ShowsListComponent } from './pages/shows-list/shows-list.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FormsModule } from '@angular/forms';
     CarouselModule,
     InputTextModule,
     FormsModule,
+    PaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
