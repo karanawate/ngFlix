@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { Observable } from 'rxjs';
-import { Movie } from '../../types/movie';
+import { Movie, MoviesDto } from '../../types/movie';
 import { PaginatorState } from 'primeng/paginator';
 
 @Component({
@@ -10,7 +10,7 @@ import { PaginatorState } from 'primeng/paginator';
   styleUrl: './shows-list.component.scss',
 })
 export class ShowsListComponent implements OnInit {
-  showsLists$: Observable<Movie[]> | null = null;
+  showsLists$: Observable<MoviesDto> | null = null;
   searchValue = '';
 
   constructor(private movieservice: MoviesService) {}
@@ -30,7 +30,7 @@ export class ShowsListComponent implements OnInit {
     const pageNumber = event.page ? event.page + 1 : 1;
     console.log(pageNumber);
     if (event.page) {
-      this.getPagedShows(pageNumber);
+      this.getPagedShows(pageNumber, this.searchValue);
     }
   }
 }

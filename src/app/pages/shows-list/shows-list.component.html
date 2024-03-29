@@ -10,19 +10,19 @@
   {{searchValue}}
   <ng-container *ngIf="showsLists$ | async as showLists">
     <div class="grid">
-      <div class="col-2"  *ngFor="let show of showLists">
+      <div class="col-2"  *ngFor="let show of showLists.results">
         <app-show-item [showItem]="show" />
       </div>
     </div>
-  </ng-container>
   <div class="grid">
     <div class="col-12">
       <p-paginator
       (onPageChange)="pageChanged($event)"
       [rows]="20"
-      [totalRecords]="120">
+      [totalRecords]="showLists.total_results">
     </p-paginator>
     </div>
   </div>
+</ng-container>
 </div>
 
