@@ -15,10 +15,14 @@ export class ShowsListComponent implements OnInit {
   constructor(private movieservice: MoviesService) {}
 
   ngOnInit(): void {
-    this.showsLists$ = this.movieservice.searchMovies(1, this.searchValue);
+    this.getPagedShows(1);
+  }
+
+  getPagedShows(page: number, searchkeyWord?: string) {
+    this.showsLists$ = this.movieservice.searchMovies(1, searchkeyWord);
   }
 
   searchChanged() {
-    console.log(this.searchValue);
+    this.getPagedShows(1, this.searchValue);
   }
 }
