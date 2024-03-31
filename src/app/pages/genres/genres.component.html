@@ -4,8 +4,7 @@
       <ng-container *ngIf="genres$ |async as genres">
         <a
         *ngFor="let genre of genres"
-        (keydown)="findByGenre(genre.id)"
-        (click)="findByGenre(genre.id)"
+        [routerLink]="'/genres/' + genre.id"
         role="button"
         aria-hidden="true"
         >{{genre.name}}</a>
@@ -13,6 +12,7 @@
       </ng-container>
     </div>
   </div>
+
   <ng-container *ngIf="shows$ | async as showLists">
     <div class="grid">
       <div class="col-2"  *ngFor="let show of showLists">

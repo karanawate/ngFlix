@@ -25,7 +25,7 @@ export type MoviesDto = {
 };
 
 export type Genre = {
-  id: number;
+  id: string;
   name: string;
 };
 
