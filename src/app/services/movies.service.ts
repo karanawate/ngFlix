@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { TvshowsDto } from '../types/tvshows';
-import { Movie, MoviesDto } from '../types/movie';
+import { GenreDto, Movie, MoviesDto } from '../types/movie';
 import { VideoDto } from '../types/video';
 import { ImageDto } from '../types/image';
 import { CreditDTO } from '../types/credit';
@@ -79,5 +79,23 @@ export class MoviesService {
     return this.http.get<MoviesDto>(
       `${this.apiUrl}/${uri}?query=${searchValue}&page=${page}&api_key=${this.apikey}`
     );
+  }
+
+  getMovieGenre() {
+    return this.http
+      .get<GenreDto>(`${this.apiUrl}/genre/movie/list?api_key=${this.apikey}`)
+      .pipe(map((data) => data.genres));
+  }
+
+  getMoviesByGenre(genreId: number, pageNumber = 1) {
+    return this.http
+      .get<MoviesDto>(
+        `${this.apiUrl}/discover/movie?with_genres=${genreId}&page=${pageNumber}&api_key=${this.apikey}`
+      )
+      .pipe(
+        map((data) => {
+          return data.results;
+        })
+      );
   }
 }

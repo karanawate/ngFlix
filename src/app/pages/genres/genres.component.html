@@ -1,1 +1,23 @@
-<p>genres works!</p>
+<div class="container">
+  <div class="grid">
+    <div class="col-12 genres-link">
+      <ng-container *ngIf="genres$ |async as genres">
+        <a
+        *ngFor="let genre of genres"
+        (keydown)="findByGenre(genre.id)"
+        (click)="findByGenre(genre.id)"
+        role="button"
+        aria-hidden="true"
+        >{{genre.name}}</a>
+        <a>Comedy</a>
+      </ng-container>
+    </div>
+  </div>
+  <ng-container *ngIf="shows$ | async as showLists">
+    <div class="grid">
+      <div class="col-2"  *ngFor="let show of showLists">
+        <app-show-item [showItem]="show" />
+      </div>
+    </div>
+  </ng-container>
+</div>
